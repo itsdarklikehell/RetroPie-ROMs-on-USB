@@ -11,8 +11,8 @@ DISCLAIMER
 CONFIG(){
 # CONFIG START
 echo 'Start configuring'
-RETP_FOLDER=/home/pi/RetroPie
-MNTPNT=/dev/sda1 #/media/usb0
+RETP_FOLDER="/home/pi/RetroPie"
+MNTPNT="/dev/sda1" #/media/usb0
 }
 AUTOMATIC(){
 # Automatic Mount
@@ -123,7 +123,7 @@ echo 'First enter the command df to print a list of the file systems.'
 echo ''
 df
 
-echo 'sudo mv -v "$RETP_FOLDER"/* "$MNTPNT"'
+echo 'sudo mv -v $RETP_FOLDER/* $MNTPNT'
 #sudo mv -v $RETP_FOLDER/* $MNTPNT
 ls -l $MNTPNT
 read -rsp $'Press any key to continue...\n' -n 1 key
