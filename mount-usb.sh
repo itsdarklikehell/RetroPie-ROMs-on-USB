@@ -117,14 +117,18 @@ echo 'itsdarklikehell`s symlink method:'
 echo ''
 echo 'Transfer the existing RetroPie file structure'
 echo ''
-#echo 'This step is mandatory regardless of whether you have any roms on your system. RetroPie has a specific directory structure and a number of files required packaged with even empty installations.'
-#echo ''
-#sudo mv -v $RETP_FOLDER/* $MNTPNT
+echo 'This step is mandatory regardless of whether you have any roms on your system. RetroPie has a specific directory structure and a number of files required packaged with even empty installations.'
+echo ''
+echo 'sudo mv -v $RETP_FOLDER/* $MNTPNT'
 #sudo mv -v $RETP_FOLDER/* $MNTPNT
 ls -l $MNTPNT
-# make symlinks: 
+read -rsp $'Press any key to continue...\n' -n 1 key
+# echo $key
+echo 'make symlinks' 
 #ln $RETP_FOLDER $MNTPNT
-# check if symlink is working
+read -rsp $'Press any key to continue...\n' -n 1 key
+# echo $key
+echo 'check if symlink is working'
 ls -l $RETP_FOLDER
 read -rsp $'Press any key to continue...\n' -n 1 key
 # echo $key
@@ -137,6 +141,6 @@ clear
 
 ################
 CONFIG
-AUTOMATIC
+#AUTOMATIC
 #MANUAL
-#SYMLINKED
+SYMLINKED
