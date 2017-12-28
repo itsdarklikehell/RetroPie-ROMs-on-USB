@@ -23,7 +23,7 @@ echo '1. First Update the RetroPie Setup Script'
 echo '2. Re-Enable the USB ROM Transfer Service'
 echo '3. Format your USB drive to FAT32 (format-ubs.sh)'
 echo '4. Create a folder called retropie-mount on the USB drive'
-mkdir -R $MNTPNT/retropie-mount
+mkdir $MNTPNT/retropie-mount
 echo '5. Plug into Raspberry Pi (if not allready)'
 echo 'It will proceed to automatically copy the RetroPie folder AND all of its contents (you may need to reboot to start the copying)'
 echo 'NOTE if you have a large ROM collection already on the SD card it will copy all of the ROMs too so make sure your USB is large enough.'
