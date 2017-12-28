@@ -1,5 +1,6 @@
 #!/bin/bash
-DISCLAIMER(){# DISCLAIMER START
+DISCLAIMER(){
+# DISCLAIMER START
 echo ' BE EXTREMELY CAREFULL! '
 echo 'i am in no way to be held responsible for loss of data, revenue or any damage done to your system by YOU running this script WITHOUT READING IT FIRST!'
 read -rsp $'Press any key to continue...\n' -n 1 key
@@ -7,12 +8,14 @@ read -rsp $'Press any key to continue...\n' -n 1 key
 clear
 }
 DISCLAIMER
-CONFIG(){# CONFIG START
+CONFIG(){
+# CONFIG START
 echo 'Start configuring'
 RETP_FOLDER=/home/pi/RetroPie
 MNTPNT=/media/usb0
 }
-AUTOMATIC(){# Automatic Mount
+AUTOMATIC(){
+# Automatic Mount
 echo 'Automatic Mount (Easiest Method)'
 echo 'As of December 30, 2016 a simple automated method was added to run roms from a USB drive.'
 echo ''
@@ -34,7 +37,8 @@ read -rsp $'Press any key to continue...\n' -n 1 key
 # echo $key
 clear
 }
-MANUAL(){# Manual Mount
+MANUAL(){
+# Manual Mount
 echo 'Manual Mount'
 echo 'After formatting your USB (format-usb.sh):'
 echo ''
@@ -102,7 +106,8 @@ read -rsp $'Press any key to continue...\n' -n 1 key
 # echo $key
 clear
 }
-SYMLINKED(){# itsdarklikehell`s symlink method:
+SYMLINKED(){
+# itsdarklikehell`s symlink method:
 echo 'itsdarklikehell`s symlink method:'
 echo ''
 echo 'Transfer the existing RetroPie file structure'
