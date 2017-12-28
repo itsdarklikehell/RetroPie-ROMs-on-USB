@@ -119,6 +119,10 @@ echo 'Transfer the existing RetroPie file structure'
 echo ''
 echo 'This step is mandatory regardless of whether you have any roms on your system. RetroPie has a specific directory structure and a number of files required packaged with even empty installations.'
 echo ''
+echo 'First enter the command df to print a list of the file systems.'
+echo ''
+df
+
 echo 'sudo mv -v $RETP_FOLDER/* $MNTPNT'
 #sudo mv -v $RETP_FOLDER/* $MNTPNT
 ls -l $MNTPNT
