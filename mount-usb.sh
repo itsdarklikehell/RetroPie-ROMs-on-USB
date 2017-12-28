@@ -62,6 +62,8 @@ echo ''
 echo 'Look for an entry on $MNTPNT, or similar.'
 echo ''
 echo 'The important things to note down are the mount point: $MNTPNT, and the position on the device tree: /dev/sda1'
+read -rsp $'Press any key to continue...\n' -n 1 key
+# echo $key
 echo ''
 echo 'Now we can move our existing RetroPie folder to our new USB drive.'
 echo 'sudo mv -v $RETP_FOLDER/* $MNTPNT'
@@ -71,6 +73,8 @@ echo 'Configure fstab to automatically mount USB drive'
 echo ''
 echo 'Establish the drive`s UUID number by entering the command ls -l /dev/disk/by-uuid/.'
 echo ''
+read -rsp $'Press any key to continue...\n' -n 1 key
+# echo $key
 echo 'Edit fstab with this command: sudo nano /etc/fstab and add a new line like the below:'
 echo 'UUID=XXXX-XXXX  $RETP_FOLDER      vfat    nofail,user,uid=pi,gid=pi 0       2'
 echo '...where UUID= the UUID of your drive, and everything else is the same as the example. Note that each item is tab delimited. If you use spaces instead of tabs this will not work.'
@@ -78,7 +82,7 @@ echo ''
 read -rsp $'Press any key to continue...\n' -n 1 key
 # echo $k
 echo 'In the case of errors with ext4 file systems use:'
-echo'UUID="XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX" $RETP_FOLDER ext4 nofail,defaults 0    0'
+echo 'UUID="XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX" $RETP_FOLDER ext4 nofail,defaults 0    0'
 echo ''
 read -rsp $'Press any key to continue...\n' -n 1 key
 # echo $key
@@ -132,6 +136,6 @@ clear
 
 ################
 CONFIG
-#AUTOMATIC
-MANUAL
+AUTOMATIC
+#MANUAL
 #SYMLINKED
