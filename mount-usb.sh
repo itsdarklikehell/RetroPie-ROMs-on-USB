@@ -12,7 +12,7 @@ CONFIG(){
 # CONFIG START
 echo 'Start configuring'
 RETP_FOLDER=/home/pi/RetroPie
-MNTPNT=/media/usb0
+MNTPNT=/dev/sda1 #/media/usb0
 }
 AUTOMATIC(){
 # Automatic Mount
