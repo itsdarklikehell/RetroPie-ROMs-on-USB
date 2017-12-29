@@ -153,5 +153,5 @@ clear
 ################
 CONFIG
 #AUTOMATIC
-MANUAL
+#MANUAL
 #SYMLINKED
