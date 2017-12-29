@@ -13,6 +13,7 @@ CONFIG(){
 echo 'Start configuring'
 RETP_FOLDER="/home/pi/RetroPie"
 MNTPNT="/dev/sda1" #/media/usb0
+mnt="mount $MNTPNT $RET_FOLDER"
 }
 AUTOMATIC(){
 # Automatic Mount
@@ -122,14 +123,14 @@ echo ''
 echo 'First enter the command df to print a list of the file systems.'
 echo ''
 df
-
 echo "sudo mv -v $RETP_FOLDER/* $MNTPNT"
 #sudo mv -v $RETP_FOLDER/* $MNTPNT
 ls -l $MNTPNT
 read -rsp $'Press any key to continue...\n' -n 1 key
 # echo $key
 echo 'make symlinks' 
-#ln $RETP_FOLDER $MNTPNT
+#ln -s <destination file or directory> <name of the symlink> 
+#ln -s $MNTPNT $RETP_FOLDER
 read -rsp $'Press any key to continue...\n' -n 1 key
 # echo $key
 echo 'check if symlink is working'
