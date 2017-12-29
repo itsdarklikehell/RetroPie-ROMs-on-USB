@@ -130,7 +130,8 @@ read -rsp $'Press any key to continue...\n' -n 1 key
 # echo $key
 echo 'make symlinks' 
 #ln -s <destination file or directory> <name of the symlink> 
-ln -sT "$MNTPNT $RETP_FOLDER"
+ln -sT $MNTPNT $RETP_FOLDER
+
 read -rsp $'Press any key to continue...\n' -n 1 key
 # echo $key
 echo 'check if symlink is working'
