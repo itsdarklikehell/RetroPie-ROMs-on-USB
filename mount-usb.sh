@@ -14,6 +14,8 @@ echo 'Start configuring'
 RETP_FOLDER="/home/pi/RetroPie"
 MNTPNT="/media/usb0"
 mnt="mount $MNTPNT $RET_FOLDER"
+UUID="XXXX-XXXX"
+EX4UUID="XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX"
 }
 AUTOMATIC(){
 # Automatic Mount
@@ -55,13 +57,16 @@ echo ''
 echo 'Transfer the existing RetroPie file structure'
 echo 'This step is mandatory regardless of whether you have any roms on your system. RetroPie has a specific directory structure and a number of files required packaged with even empty installations.'
 echo ''
-echo 'Either via SFTP, or using the terminal (via exiting emulationstation, pressing F4, or remotely using [[SSH]]), move the $RETP_FOLDER folder into your USB stick. The reason for moving the whole folder, and not just $RETP_FOLDER/roms is that there are other folders, such as $RETP_FOLDER/BIOS` that are worth keeping on the external drive also.'
+read -rsp $'Press any key to continue...\n' -n 1 key
+# echo $key
+echo "Either via SFTP, or using the terminal (via exiting emulationstation, pressing F4, or remotely using [[SSH]]), move the $RETP_FOLDER folder into your USB stick."
+echo "The reason for moving the whole folder, and not just $RETP_FOLDER/roms is that there are other folders, such as $RETP_FOLDER/BIOS` that are worth keeping on the external drive also."
 echo ''
 echo 'To do this via terminal, First enter the command df to print a list of the file systems.'
 echo ''
 df
 echo ''
-echo 'Look for an entry on $MNTPNT, or similar.'
+echo "Look for an entry on $MNTPNT, or similar."
 echo ''
 echo 'The important things to note down are the mount point: $MNTPNT, and the position on the device tree: /dev/sda1'
 read -rsp $'Press any key to continue...\n' -n 1 key
@@ -78,18 +83,18 @@ echo ''
 read -rsp $'Press any key to continue...\n' -n 1 key
 # echo $key
 echo 'Edit fstab with this command: sudo nano /etc/fstab and add a new line like the below:'
-echo 'UUID=XXXX-XXXX  $RETP_FOLDER      vfat    nofail,user,uid=pi,gid=pi 0       2'
+echo "UUID=$UUID	$RETP_FOLDER	vfat	nofail,user,uid=pi,gid=pi	0	2"
 echo '...where UUID= the UUID of your drive, and everything else is the same as the example. Note that each item is tab delimited. If you use spaces instead of tabs this will not work.'
 echo ''
 read -rsp $'Press any key to continue...\n' -n 1 key
 # echo $k
 echo 'In the case of errors with ext4 file systems use:'
-echo 'UUID="XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX" $RETP_FOLDER ext4 nofail,defaults 0    0'
+echo 'UUID="$EX4UUID" $RETP_FOLDER ext4 nofail,defaults 0    0'
 echo ''
 read -rsp $'Press any key to continue...\n' -n 1 key
 # echo $key
 echo 'In the case you want to allow execution of file with fat32 file system (E.g : OpenBOR), use:'
-echo 'UUID=E44B-FC4E  $RETP_FOLDER      vfat    rw,exec,uid=pi,gid=pi,umask=022 0       2'
+echo "UUID=$UUID	$RETP_FOLDER	vfat	rw,exec,uid=pi,gid=pi,umask=022	0	2"
 echo ''
 read -rsp $'Press any key to continue...\n' -n 1 key
 # echo $key
@@ -148,5 +153,5 @@ clear
 ################
 CONFIG
 #AUTOMATIC
-#MANUAL
-SYMLINKED
+MANUAL
+#SYMLINKED
