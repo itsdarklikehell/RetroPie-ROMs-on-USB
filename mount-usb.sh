@@ -119,7 +119,7 @@ clear
 }
 SYMLINKED(){
 # itsdarklikehell`s symlink method:
-echo 'itsdarklikehell`s symlink method:'
+echo 'itsdarklikehells symlink method:'
 echo ''
 echo 'Transfer the existing RetroPie file structure'
 echo ''
