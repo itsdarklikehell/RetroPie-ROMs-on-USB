@@ -60,7 +60,7 @@ echo ''
 read -rsp $'Press any key to continue...\n' -n 1 key
 # echo $key
 echo "Either via SFTP, or using the terminal (via exiting emulationstation, pressing F4, or remotely using [[SSH]]), move the $RETP_FOLDER folder into your USB stick."
-echo "The reason for moving the whole folder, and not just $RETP_FOLDER/roms is that there are other folders, such as $RETP_FOLDER/BIOS` that are worth keeping on the external drive also."
+echo "The reason for moving the whole folder, and not just $RETP_FOLDER/roms is that there are other folders, such as $RETP_FOLDER/BIOS' that are worth keeping on the external drive also."
 echo ''
 echo 'To do this via terminal, First enter the command df to print a list of the file systems.'
 echo ''
