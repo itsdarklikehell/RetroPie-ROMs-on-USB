@@ -3,18 +3,18 @@ echo 'format USB drive.'
 echo ''
 echo ' BE EXTREMELY CAREFULL! '
 echo 'i am in no way to be held responsible for loss of data, revenue or any damage done to your system by YOU running this script WITHOUT READING IT FIRST!'
-read -rsp $'Press any key to continue...\n' -n 1 key
+read -rsp $'Press any key to continue...\n' -n 1
 # echo $key
 clear
 FINDMNT(){
 echo 'To find out the USB device mount point, utilize the `fdisk` command.'
-read -rsp $'Press any key to continue...\n' -n 1 key
+read -rsp $'Press any key to continue...\n' -n 1
 # echo $key
 echo 'On my system, the last line in the above listing - `/dev/sdb1` is the USB mount point.'
 echo 'MAKE SURE ITS THE RIGHT ONE, OR ELSE FACE THE CONSEQUENCES OF LOSING ALL DATA ON THAT DRIVE/PARTITON'
 fdisk -l
 echo 'write it down..'
-read -rsp $'Press any key to continue...\n' -n 1 key
+read -rsp $'Press any key to continue...\n' -n 1
 # echo $key
 }
 FINDMNT
