@@ -126,3 +126,11 @@ This must be a full restart, not just emulationstation. When it boots up you sho
 
 ### Transfer ROMs
 Now transfer ROMs either directly to the USB drive, or via any of the usual methods (aside from using the automatic USB copy, obviously!). Now that the USB drive is mounted directly to `home/pi/RetroPie`, every time this directory is accessed, you're actually accessing the USB drive.
+
+---
+
+## 🎥 Gource Visualization
+
+De ontwikkelhistorie van dit project in een film:
+
+<video src="https://raw.githubusercontent.com/itsdarklikehell/RetroPie-ROMs-on-USB/master/gource.mp4" controls width="100%"></video>
