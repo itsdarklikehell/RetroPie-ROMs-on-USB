@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 echo 'format USB drive.'
 echo ''
 echo ' BE EXTREMELY CAREFULL! '

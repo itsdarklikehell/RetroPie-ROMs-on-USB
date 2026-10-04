@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 DISCLAIMER(){
 # DISCLAIMER START
 echo ' BE EXTREMELY CAREFULL! '
