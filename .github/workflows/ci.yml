@@ -1,10 +1,67 @@
 name: CI
+
 on:
   push:
-    branches: ["master","main","master"]
+    branches: ["master", "main"]
   pull_request:
-    branches: ["master","main","master"]
+    branches: ["master", "main"]
   workflow_dispatch:
+
 jobs:
-  ci:
-    uses: itsdarklikehell/ci-templates/.github/workflows/ci-generic.yml@v1
+  shellcheck:
+    name: ShellCheck
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run ShellCheck
+        uses: ludeeus/action-shellcheck@master
+        with:
+          scandir: "."
+          check_together: "yes"
+          severity: warning
+        env:
+          SHELLCHECK_OPTS: "-e SC2086"
+
+  shellcheck-strict:
+    name: ShellCheck (strict)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run ShellCheck (strict)
+        uses: ludeeus/action-shellcheck@master
+        with:
+          scandir: "."
+          check_together: "yes"
+          severity: style
+        env:
+          SHELLCHECK_OPTS: "-e SC2086"
+
+  bash-syntax:
+    name: Bash syntax check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check bash syntax
+        run: |
+          for script in *.sh; do
+            echo "Checking $script..."
+            bash -n "$script"
+          done
+
+  markdown-lint:
+    name: Markdown lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Lint markdown
+        uses: DavidAnson/markdownlint-cli2-action@v16
+        with:
+          globs: "**/*.md"
